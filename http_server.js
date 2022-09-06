@@ -4,7 +4,11 @@ const low     = require('lowdb');
 const fs      = require('lowdb/adapters/FileSync');
 const adapter = new fs('db.json');
 const db      = low(adapter);
+const cors    = require('cors');
 const { faker } = require('@faker-js/faker');
+
+/ allow cross-origin resource sharing (CORS)
+app.use(cors());
 
 // data parser - used to parse post data
 var bodyParser = require('body-parser');
